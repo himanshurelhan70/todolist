@@ -1,0 +1,181 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: rgba(238, 238, 238, 0.987);
+}
+
+header h1{
+    font-size: 2rem;
+}
+
+/* /////// todo container start /// */
+.todo_container{
+    width: 70%;
+    margin: 70px auto;
+    padding: 50px 0;
+    background: #fff;
+}
+
+/* ////// todo top starts ////// */
+.todo_top #addButton, .todo_top #clearAllButton{
+    border: none;
+    margin-right: 5px;
+    transition: all 0.3s ease;
+}
+
+.todo_top #addButton:hover{ 
+    background: var(--success);
+}
+
+.todo_top #clearAllButton:hover{  
+    background: var(--danger);
+}
+/* //////// todo top end //////// */
+
+/* //// todo bottom start /////// */
+.todo_bottom{
+    margin-top: 50px;
+}
+
+.todo_bottom ul{
+    list-style-type: none;
+}
+
+
+#todoList li textarea{
+    flex-grow: 1;
+    /* height: 40px; */
+    padding: 5px 10px;
+    background-color: #fff;
+    border: none;
+    outline: none;
+    resize: none;
+    transition: all 0.3s ease;
+}
+
+#todoList li:nth-child(odd) textarea{
+    background: #efefef;
+}
+
+#todoList li textarea:hover{
+    background-color: #dfdfdf;
+}
+
+#todoList li .buttons{
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    display: none;
+}
+
+#todoList li:nth-child(odd) .buttons{
+    background-color: #efefef;
+}
+
+#todoList li .buttons button{
+    width: 60px;
+    height: 40px;
+    padding: 5px;
+    border: none;
+    margin-left: 10px;
+    transition: all 0.3s ease;
+}
+
+#todoList li .buttons button:first-child{
+    margin-left: 0;
+}
+
+#todoList li .buttons button.btn1:hover{
+    background: var(--primary);
+}
+
+#todoList li .buttons button.btn2:hover{
+    background: var(--success);
+}
+
+#todoList li .buttons button.btn3:hover{
+    background: var(--danger);
+}
+
+#todoList li:hover > .buttons{
+   display: flex;
+}
+
+#todoList li .buttons button.btn1::before{
+    content: "Edit";
+}
+
+#todoList li .buttons button.btn2::before{
+    content: "Save";
+}
+
+#todoList li .buttons button.btn3::before{
+    content: "Delete";
+}
+
+
+@media(max-width: 950px){
+    .todo_container{
+        width: 85%;
+    }
+}
+
+@media (max-width: 768px){
+    .todo_container{
+        width: 90%;
+    }
+
+    .todo_container .todo_top .btnDiv{
+        margin-top: 20px;
+    }
+
+
+    #todoList li .buttons button{
+        width: 40px;
+        height: 40px;
+        padding: 0;
+    }
+
+    #todoList li .buttons button::before{
+        font-family: "Font Awesome 5 Free";
+        font-size: 1rem;
+        font-weight: 900; 
+    }
+
+    #todoList li .buttons button.btn1::before{
+        content: "\f304";
+    }
+    
+    #todoList li .buttons button.btn2::before{
+        content: "\f0c7";
+    }
+    
+    #todoList li .buttons button.btn3::before{
+        content: "\f1f8";
+    }
+    
+}
+
+@media(max-width: 500px){
+    .todo_container{
+        width: 100%;
+    }
+
+    #todoList li .buttons{
+        display: flex;
+    }
+
+    #todoList li .buttons button{
+        width: 25px;
+        /* height: 30px; */
+        margin-left: 5px;
+    }
+
+    #todoList li .buttons button::before{
+        font-size: 0.9rem;
+    }
+}
